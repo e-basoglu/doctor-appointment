@@ -14,7 +14,6 @@ const firebaseConfig = {
   measurementId: "G-M4HD98XYZ1",
 };
 
-// Firebase uygulamasını başlatma
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
