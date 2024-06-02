@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
@@ -17,5 +17,24 @@ const firebaseConfig = {
 // Firebase uygulamasını başlatma
 const app = initializeApp(firebaseConfig);
 
-// Firebase Authentication servisini başlatma
 const auth = getAuth(app);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const loginEmail = loginForm["loginEmail"].value;
+    const loginPassword = loginForm["password"].value;
+
+    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+      .then((userCredential) => {
+        console.log("Login successful");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        const loginError = document.getElementById("loginError");
+        loginError.innerText = error.message;
+      });
+  });
+});

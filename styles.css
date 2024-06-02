@@ -57,6 +57,14 @@ header {
   font-weight: bold;
 }
 
+#signup-link{
+  color: white;
+}
+
+#login-link{
+  color: white;
+}
+
 /* Main content */
 main {
   text-align: center;

@@ -14,13 +14,10 @@ const firebaseConfig = {
   measurementId: "G-M4HD98XYZ1",
 };
 
-// Firebase uygulamasını başlatma
 const app = initializeApp(firebaseConfig);
 
-// Firebase Authentication servisini başlatma
 const auth = getAuth(app);
 
-// Signup formunu dinleme
 document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signupForm");
   if (signupForm) {
