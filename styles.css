@@ -14,7 +14,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f0f8ff;
+  background-color: #2378ab;
   color: #333;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ body {
 header {
   width: 100%;
   padding: 0.5rem;
-  background-color: #ffffff;
+  background-color: #2378ab;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,14 +39,15 @@ header {
 }
 
 .logo img {
-  height: 3.125rem;
+  height: 2.5rem;
   margin-left: 1rem;
 }
 
 .clinic-name {
   font-size: 1.25rem;
-  color: #0f425b;
-  font-weight: 600;
+  color: white;
+  font-weight: 400;
+  padding-left: 10px;
 }
 
 .auth-links a {
@@ -116,7 +117,7 @@ h1 {
 
 h2 {
   margin-bottom: 20px;
-  color: #0f425b;
+  color: #2378ab;
   font-size: 1.75rem;
   font-weight: 600;
 }
@@ -151,7 +152,7 @@ input[type="password"]::placeholder {
 }
 
 a {
-  color: #027499;
+  color: #2378ab;
   text-decoration: none;
 }
 
@@ -162,7 +163,7 @@ a:hover {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #027499;
+  background-color: #2378ab;
   border: none;
   color: #fff;
   font-size: 16px;
@@ -170,7 +171,7 @@ button {
 }
 
 button:hover {
-  background-color: #359bba;
+  background-color: #3ea7c0;
 }
 .small_txt {
   font-size: 0.8rem;
@@ -198,7 +199,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(114, 192, 216, 0.5);
+  background-color: rgb(77, 176, 234, 0.7);
   z-index: -1;
 }
 
@@ -206,6 +207,7 @@ button:hover {
 
 footer {
   padding: 5px;
+  color: white;
 }
 
 /*error email*/
@@ -213,7 +215,6 @@ footer {
 .error-message {
   color: red;
   font-size: 0.8rem;
-
   margin-top: 5px;
 }
 
