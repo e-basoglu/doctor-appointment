@@ -2,6 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getAuth,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
@@ -15,25 +17,54 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
+  const loginLink = document.getElementById("login-link");
+  const logoutLink = document.getElementById("logout-link");
+  const appointmentsLink = document.getElementById("appointments-link");
 
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const loginEmail = loginForm["loginEmail"].value;
-    const loginPassword = loginForm["password"].value;
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const loginEmail = loginForm["loginEmail"].value;
+      const loginPassword = loginForm["password"].value;
 
-    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      .then((userCredential) => {
-        console.log("Login successful");
-        window.location.href = "index.html";
-      })
-      .catch((error) => {
-        const loginError = document.getElementById("loginError");
-        loginError.innerText = error.message;
-      });
+      signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+        .then(() => {
+          console.log("Login success");
+          window.location.href = "appointment.html"; // Redirect to appointment page
+        })
+        .catch((err) => {
+          const loginError = document.getElementById("loginError");
+          loginError.innerText = err.message;
+        });
+    });
+  }
+
+  if (logoutLink) {
+    logoutLink.addEventListener("click", () => {
+      signOut(auth)
+        .then(() => {
+          console.log("Logout success");
+          window.location.href = "index.html"; // Redirect to home page
+        })
+        .catch((err) => {
+          console.error("Logout error: ", err);
+        });
+    });
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      loginLink.style.display = "none";
+      logoutLink.style.display = "inline";
+      appointmentsLink.style.display = "inline";
+    } else {
+      loginLink.style.display = "inline";
+      logoutLink.style.display = "none";
+      appointmentsLink.style.display = "none";
+    }
   });
 });

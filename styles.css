@@ -65,6 +65,14 @@ header {
   color: white;
 }
 
+#appointments-link{
+    color: white;
+}
+
+#logout-link{
+    color: white;
+}
+
 /* Main content */
 main {
   text-align: center;

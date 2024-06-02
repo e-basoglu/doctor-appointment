@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
         .then(() => {
           console.log("signup success");
-          location = "index.html";
+          location = "login.html"; //login page
         })
         .catch((err) => {
           const signupError = document.getElementById("signupError");
