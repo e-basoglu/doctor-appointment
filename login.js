@@ -1,5 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCYOLJfSlHW93r6wjYkqhJsxViYWqrl_e4",
@@ -15,9 +20,28 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
   const loginLink = document.getElementById("login-link");
   const logoutLink = document.getElementById("logout-link");
   const appointmentsLink = document.getElementById("appointments-link");
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const loginEmail = loginForm["loginEmail"].value;
+      const loginPassword = loginForm["password"].value;
+
+      signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+        .then(() => {
+          console.log("Login success");
+          window.location.href = "appointment.html"; // Redirect to appointment page
+        })
+        .catch((err) => {
+          const loginError = document.getElementById("loginError");
+          loginError.innerText = err.message;
+        });
+    });
+  }
 
   if (logoutLink) {
     logoutLink.addEventListener("click", () => {
@@ -34,13 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      if (loginLink) loginLink.style.display = "none";
-      if (logoutLink) logoutLink.style.display = "inline";
-      if (appointmentsLink) appointmentsLink.style.display = "inline";
+      loginLink.style.display = "none";
+      logoutLink.style.display = "inline";
+      appointmentsLink.style.display = "inline";
     } else {
-      if (loginLink) loginLink.style.display = "inline";
-      if (logoutLink) logoutLink.style.display = "none";
-      if (appointmentsLink) appointmentsLink.style.display = "none";
+      loginLink.style.display = "inline";
+      logoutLink.style.display = "none";
+      appointmentsLink.style.display = "none";
     }
   });
 });

@@ -8,12 +8,14 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <a href="./index.html" class="logo">
         <img src="assets/logo.png" alt="Logo" />
         <span class="clinic-name">LENS Clinic</span>
-      </div>
+      </a>
       <div class="auth-links">
-        <a href="#" id="login-link">Log In</a>
+        <a href="./appointment.html" id="appointment-link" style="display: none">Appointments</a>
+        <a href="./login.html" id="login-link">Log In</a>
+        <a href="./signup.html" id="signup-link">Sign Up</a>
         <a href="#" id="logout-link" style="display: none">Log Out</a>
       </div>
     </header>
@@ -25,10 +27,12 @@
       >
         <img src="assets/logo.png" alt="Logo" />
       </a>
-      <button class="appointment-link" id="appointment-button">
-        Make an Appointment
-      </button>
+      <a href="login.html">
+        <button class="appointment-link" id="appointment-button">
+          Make an Appointment
+        </button>
+      </a>
     </main>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

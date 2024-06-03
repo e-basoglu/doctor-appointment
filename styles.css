@@ -63,6 +63,22 @@ header {
   font-weight: bold;
 }
 
+#signup-link {
+  color: white;
+}
+
+#login-link {
+  color: white;
+}
+
+#appointments-link {
+  color: white;
+}
+
+#logout-link {
+  color: white;
+}
+
 /* Main content */
 main {
   text-align: center;
