@@ -22,8 +22,9 @@ const auth = getAuth(app);
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   const loginLink = document.getElementById("login-link");
+  const signupLink = document.getElementById("signup-link");
   const logoutLink = document.getElementById("logout-link");
-  const appointmentsLink = document.getElementById("appointments-link");
+  const appointmentsLink = document.getElementById("appointment-link");
 
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       loginLink.style.display = "none";
+      signupLink.style.display = "none";
       logoutLink.style.display = "inline";
       appointmentsLink.style.display = "inline";
     } else {

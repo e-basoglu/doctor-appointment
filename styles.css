@@ -76,12 +76,13 @@ header {
   color: white;
 }
 
-#appointments-link {
+#appointment-link {
   color: white;
 }
 
 #logout-link {
   color: white;
+  display: none;
 }
 
 /* Main content */

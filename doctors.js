@@ -20,23 +20,6 @@ async function fetchDoctors() {
   }
 }
 
-function createDoctorItem(doctor) {
-  const doctorItem = document.createElement("li");
-
-  doctorItem.textContent = `Dr. ${doctor.fullName} - ${doctor.specialization}`;
-
-  const appointmentBtn = document.createElement("button");
-  appointmentBtn.textContent = "Choose";
-  appointmentBtn.classList.add("appointment-btn");
-  appointmentBtn.addEventListener("click", () => {
-    doctorsBlock.className = "doctors-on-click";
-  });
-
-  doctorItem.appendChild(appointmentBtn);
-
-  return doctorItem;
-}
-
 async function displayDoctors() {
   const data = await fetchDoctors();
   if (data) {
@@ -59,6 +42,38 @@ async function displayDoctors() {
       });
     });
   }
+}
+
+function createDoctorItem(doctor) {
+  const doctorItem = document.createElement("li");
+
+  const doctorImg = document.createElement("img");
+  doctorImg.src = doctor.img;
+  doctorImg.alt = doctor.fullName;
+  doctorItem.appendChild(doctorImg);
+
+  const doctorName = document.createElement("h2");
+  doctorName.textContent = doctor.fullName;
+  doctorItem.appendChild(doctorName);
+
+  const doctorSpecialization = document.createElement("p");
+  doctorSpecialization.textContent = doctor.specialization;
+  doctorItem.appendChild(doctorSpecialization);
+
+  const doctorRoom = document.createElement("p");
+  doctorRoom.textContent = doctor.roomNumber;
+  doctorItem.appendChild(doctorRoom);
+
+  const appointmentBtn = document.createElement("button");
+  appointmentBtn.textContent = "Choose";
+  appointmentBtn.classList.add("appointment-btn");
+  appointmentBtn.addEventListener("click", () => {
+    doctorsBlock.className = "doctors-on-click";
+  });
+
+  doctorItem.appendChild(appointmentBtn);
+
+  return doctorItem;
 }
 
 function showConfirmationButton(clickedDoctor) {

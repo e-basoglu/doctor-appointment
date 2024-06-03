@@ -1,5 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCYOLJfSlHW93r6wjYkqhJsxViYWqrl_e4",
@@ -16,8 +20,9 @@ const auth = getAuth(app);
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginLink = document.getElementById("login-link");
+  const signupLink = document.getElementById("signup-link");
   const logoutLink = document.getElementById("logout-link");
-  const appointmentsLink = document.getElementById("appointments-link");
+  const appointmentLink = document.getElementById("appointment-link");
 
   if (logoutLink) {
     logoutLink.addEventListener("click", () => {
@@ -35,12 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       if (loginLink) loginLink.style.display = "none";
-      if (logoutLink) logoutLink.style.display = "inline";
-      if (appointmentsLink) appointmentsLink.style.display = "inline";
+      if (signupLink) signupLink.style.display = "none";
+      logoutLink.style.display = "inline";
+      appointmentLink.style.display = "inline";
     } else {
       if (loginLink) loginLink.style.display = "inline";
       if (logoutLink) logoutLink.style.display = "none";
-      if (appointmentsLink) appointmentsLink.style.display = "none";
+      if (appointmentLink) appointmentLink.style.display = "none";
     }
   });
 });
