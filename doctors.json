@@ -1,0 +1,92 @@
+[
+    {
+        "fullName": "John Doe",
+        "email": "johndoe@example.com",
+        "phoneNumber": "1234567890",
+        "gender": "Male",
+        "specialization": "Cardiology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "101"
+    },
+    {
+        "fullName": "Jane Smith",
+        "email": "janesmith@example.com",
+        "phoneNumber": "9876543210",
+        "gender": "Female",
+        "specialization": "Dermatology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "102"
+    },
+    {
+        "fullName": "Michael Johnson",
+        "email": "michaeljohnson@example.com",
+        "phoneNumber": "4567890123",
+        "gender": "Male",
+        "specialization": "Orthopedics",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "103"
+    },
+    {
+        "fullName": "Emily Brown",
+        "email": "emilybrown@example.com",
+        "phoneNumber": "3210987654",
+        "gender": "Female",
+        "specialization": "Pediatrics",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "104"
+    },
+    {
+        "fullName": "David Wilson",
+        "email": "davidwilson@example.com",
+        "phoneNumber": "7890123456",
+        "gender": "Male",
+        "specialization": "Ophthalmology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "105"
+    },
+    {
+        "fullName": "Sarah Taylor",
+        "email": "sarahtaylor@example.com",
+        "phoneNumber": "2345678901",
+        "gender": "Female",
+        "specialization": "Gynecology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "106"
+    },
+    {
+        "fullName": "Christopher Anderson",
+        "email": "christopheranderson@example.com",
+        "phoneNumber": "9012345678",
+        "gender": "Male",
+        "specialization": "Neurology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "107"
+    },
+    {
+        "fullName": "Olivia Thomas",
+        "email": "oliviathomas@example.com",
+        "phoneNumber": "5678901234",
+        "gender": "Female",
+        "specialization": "Psychiatry",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "108"
+    },
+    {
+        "fullName": "Daniel Robinson",
+        "email": "danielrobinson@example.com",
+        "phoneNumber": "0123456789",
+        "gender": "Male",
+        "specialization": "Urology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "109"
+    },
+    {
+        "fullName": "Sophia Harris",
+        "email": "sophiaharris@example.com",
+        "phoneNumber": "8901234567",
+        "gender": "Female",
+        "specialization": "Endocrinology",
+        "img": "/assets/doctor-icon.svg",
+        "roomNumber": "110"
+    }
+]
