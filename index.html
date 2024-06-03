@@ -10,28 +10,32 @@
     <header>
       <a href="./index.html" class="logo">
         <img src="assets/logo.png" alt="Logo" />
-        <span class="clinic-name">LENS Clinic</span>
+        <span class="clinic-name">Swiss Care Clinic</span>
       </a>
       <div class="auth-links">
-        <a href="./appointment.html" id="appointment-link" style="display: none">Appointments</a>
-        <a href="./login.html" id="login-link">Log In</a>
-        <a href="./signup.html" id="signup-link">Sign Up</a>
+        <a href="./appointment.html" id="appointment-link" style="display: none"
+          >Appointments</a
+        >
+        <a href="./login.html" id="login-link" class="txt_white">Log In</a>
+        <p class="slash">/</p>
+        <a href="./signup.html" id="signup-link" class="txt_white">Sign Up</a>
         <a href="#" id="logout-link" style="display: none">Log Out</a>
       </div>
     </header>
     <main>
-      <h1>Welcome</h1>
-      <a
-        id="login-link appointment-button"
-        class="welcome_logo appointment-link"
-      >
-        <img src="assets/logo.png" alt="Logo" />
-      </a>
-      <a href="login.html">
-        <button class="appointment-link" id="appointment-button">
-          Make an Appointment
-        </button>
-      </a>
+      <div class="svg-background">
+        <div class="welcome_logo">
+          <a id="login-link appointment-button">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+          <span class="clinic-name-welcome">Swiss Care Clinic</span>
+          <a href="login.html">
+            <button class="appointment_button" id="appointment-button">
+              Make an Appointment
+            </button>
+          </a>
+        </div>
+      </div>
     </main>
     <script type="module" src="script.js"></script>
   </body>
