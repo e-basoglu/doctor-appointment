@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="profile.css" />
     <title>Profile</title>
   </head>
   <body>
@@ -24,37 +25,55 @@
       </div>
     </header>
     <main>
-      <section>
-        <div id="appointmentsContainer"></div>
-      </section>
+      <h1>Appointment List</h1>
+      <div id="appointmentsContainer">
+        <ul id="appointmentsUlContainer"></ul>
+      </div>
     </main>
     <script type="module" src="script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const appointmentsContainer = document.getElementById(
-          "appointmentsContainer"
+        const appointmentsUlContainer = document.getElementById(
+          "appointmentsUlContainer"
         );
         const appointments =
           JSON.parse(localStorage.getItem("appointments")) || [];
 
         if (appointments.length === 0) {
-          appointmentsContainer.innerHTML =
-            "<p>Henüz randevu kaydedilmemiş.</p>";
+          appointmentsContainer.innerHTML = "<p>There is no appointment</p>";
         } else {
-          appointments.forEach((appointment) => {
-            const card = document.createElement("div");
+          appointments.forEach((appointment, index) => {
+            const card = document.createElement("li");
             card.classList.add("appointment-card");
 
             card.innerHTML = `
-                <h3>Doktor: ${appointment.doctor}</h3>
-                <p>Tarih: ${appointment.date}</p>
-                <p>Saat: ${appointment.time}</p>
-            `;
+            <img src="assets/doctor-icon.svg" alt="Doctor Icon">
+            <h2>${appointment.doctor}</h2> 
+            <p>${appointment.date}</p>
+            <p>${appointment.time}</p>
+            <button class="delete-btn" data-index="${index}">Delete</button>
+        `;
 
-            appointmentsContainer.appendChild(card);
+            appointmentsUlContainer.appendChild(card);
+          });
+
+          // Delete button event listeners
+          document.querySelectorAll(".delete-btn").forEach((button) => {
+            button.addEventListener("click", function () {
+              const index = this.getAttribute("data-index");
+              deleteAppointment(index);
+            });
           });
         }
       });
+
+      function deleteAppointment(index) {
+        let appointments =
+          JSON.parse(localStorage.getItem("appointments")) || [];
+        appointments.splice(index, 1); // Remove the appointment at the given index
+        localStorage.setItem("appointments", JSON.stringify(appointments)); // Update localStorage
+        location.reload(); // Reload the page to update the displayed appointments
+      }
     </script>
   </body>
 </html>
