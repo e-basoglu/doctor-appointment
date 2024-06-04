@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       appointmentLink.style.display = "inline";
     } else {
       if (loginLink) loginLink.style.display = "inline";
+      if (signupLink) signupLink.style.display = "inline";
       if (logoutLink) logoutLink.style.display = "none";
       if (appointmentLink) appointmentLink.style.display = "none";
     }

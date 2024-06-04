@@ -76,7 +76,7 @@ header {
   color: white;
 }
 
-#appointment-link {
+#appointments-link {
   color: white;
 }
 
@@ -160,7 +160,7 @@ input[type="password"]::placeholder {
 }
 
 a {
-  color: #2378ab;
+  color: white;
   text-decoration: none;
 }
 
