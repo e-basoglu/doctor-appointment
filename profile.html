@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Profile</title>
   </head>
   <body>
@@ -14,6 +15,7 @@
       </a>
       <div class="auth-links">
         <a href="./appointment.html" id="appointment-link">Appointments</a>
+        <p class="slash">/</p>
         <a href="./profile.html" id="profile-link">Profile</a>
         <a href="./login.html" id="login-link" class="txt_white">Log In</a>
         <p class="slash">/</p>
@@ -21,5 +23,20 @@
         <a href="#" id="logout-link" style="display: none">Log Out</a>
       </div>
     </header>
+    <main>
+      <section>
+        <article>
+          <img src="" alt="placeholder" />
+          <p>Doctor Name:</p>
+          <p>Date:</p>
+          <p>Time:</p>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="script.js"></script>
+    <script>
+      let storageInfo = localStorage.getItem();
+      console.log(storageInfo);
+    </script>
   </body>
 </html>
