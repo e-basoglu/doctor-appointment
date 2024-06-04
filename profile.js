@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const appointmentsUlContainer = document.getElementById(
-      "appointmentsUlContainer"
-    );
-    const appointments =
-      JSON.parse(localStorage.getItem("appointments")) || [];
+    const appointmentsUlContainer = document.getElementById("appointmentsUlContainer");
+    let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+    // Sort the appointments by date
+    appointments.sort((a, b) => new Date(a.date) - new Date(b.date));
 
     if (appointments.length === 0) {
       appointmentsContainer.innerHTML = "<p>There is no appointment</p>";
