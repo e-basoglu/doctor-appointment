@@ -25,18 +25,36 @@
     </header>
     <main>
       <section>
-        <article>
-          <img src="" alt="placeholder" />
-          <p>Doctor Name:</p>
-          <p>Date:</p>
-          <p>Time:</p>
-        </article>
+        <div id="appointmentsContainer"></div>
       </section>
     </main>
     <script type="module" src="script.js"></script>
     <script>
-      let storageInfo = localStorage.getItem();
-      console.log(storageInfo);
+      document.addEventListener("DOMContentLoaded", function () {
+        const appointmentsContainer = document.getElementById(
+          "appointmentsContainer"
+        );
+        const appointments =
+          JSON.parse(localStorage.getItem("appointments")) || [];
+
+        if (appointments.length === 0) {
+          appointmentsContainer.innerHTML =
+            "<p>Henüz randevu kaydedilmemiş.</p>";
+        } else {
+          appointments.forEach((appointment) => {
+            const card = document.createElement("div");
+            card.classList.add("appointment-card");
+
+            card.innerHTML = `
+                <h3>Doktor: ${appointment.doctor}</h3>
+                <p>Tarih: ${appointment.date}</p>
+                <p>Saat: ${appointment.time}</p>
+            `;
+
+            appointmentsContainer.appendChild(card);
+          });
+        }
+      });
     </script>
   </body>
 </html>
