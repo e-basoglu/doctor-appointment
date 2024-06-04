@@ -1,8 +1,16 @@
+.content-wrapper {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: calc(100vh - 100vh);  /* Adjust header-height as needed */
+  }
 #doctors {
     display: flex;
     flex-direction: column;
     background-color: rgb(219, 219, 219);
-    width: 50%;
+    width: 70%;
+    height: 100%;
 }
 
 .doctors-before-click ul li {
