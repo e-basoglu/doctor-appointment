@@ -23,18 +23,20 @@ async function fetchDoctors() {
 async function displayDoctors() {
   const data = await fetchDoctors();
   if (data) {
+    const doctorUl = document.createElement("ul"); // Create the ul element once
+
     data.forEach((doctor) => {
-      const doctorUl = document.createElement("ul");
-      const doctorItem = createDoctorItem(doctor);
+      const doctorItem = createDoctorItem(doctor); // Assuming createDoctorItem returns an li element
       doctorUl.appendChild(doctorItem);
-      doctorsBlock.appendChild(doctorUl);
     });
+
+    doctorsBlock.appendChild(doctorUl); // Append the ul element to doctorsBlock
 
     const appointmentButtons = document.querySelectorAll(".appointment-btn");
     appointmentButtons.forEach((button) => {
       button.addEventListener("click", (event) => {
-        const clickedDoctor = event.target.closest("ul");
-        const otherDoctorItems = Array.from(doctorsBlock.children).filter(
+        const clickedDoctor = event.target.closest("li"); // Change this to li
+        const otherDoctorItems = Array.from(doctorUl.children).filter( // Change this to doctorUl.children
           (item) => item !== clickedDoctor
         );
         otherDoctorItems.forEach((item) => (item.style.display = "none"));
@@ -43,6 +45,7 @@ async function displayDoctors() {
     });
   }
 }
+
 
 function createDoctorItem(doctor) {
   const doctorItem = document.createElement("li");
@@ -86,7 +89,7 @@ function showConfirmationButton(clickedDoctor) {
   const confirmButton = document.createElement("button");
   confirmButton.textContent = "Confirm Doctor";
   confirmButton.classList.add("confirm-doctor-btn");
-  clickedDoctor.appendChild(confirmButton);
+  clickedDoctor.after(confirmButton);
 
   confirmButton.addEventListener("click", () => {
     const dateForm = createDateForm();
