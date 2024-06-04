@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutLink = document.getElementById("logout-link");
   const appointmentLink = document.getElementById("appointment-link");
   const appointmentButton = document.getElementById("appointment-button");
+  const slashLoggedin = document.getElementById("slashLoggedin");
 
   if (logoutLink) {
     logoutLink.addEventListener("click", () => {
@@ -46,12 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (logoutLink) logoutLink.style.display = "inline";
       if (appointmentLink) appointmentLink.style.display = "inline";
       if (profileLink) profileLink.style.display = "inline";
+      if (profileLink) profileLink.style.display = "inline";
+      if (slashLoggedin) slashLoggedin.style.display = "inline";
     } else {
       if (loginLink) loginLink.style.display = "inline";
       if (signupLink) signupLink.style.display = "inline";
       if (logoutLink) logoutLink.style.display = "none";
       if (appointmentLink) appointmentLink.style.display = "none";
       if (profileLink) profileLink.style.display = "none";
+      if (slashLoggedin) slashLoggedin.style.display = "none";
     }
   });
 

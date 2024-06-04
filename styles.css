@@ -76,6 +76,11 @@ header {
   color: white;
 }
 
+#slashLoggedin {
+  margin: 0 10px;
+  color: white;
+}
+
 #signup-link {
   color: white;
 }
