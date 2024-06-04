@@ -67,6 +67,9 @@ header {
   display: flex;
   flex-direction: row;
 }
+.auth-links a{
+  margin: 0 10px;
+}
 
 .slash {
   margin: 0 10px;

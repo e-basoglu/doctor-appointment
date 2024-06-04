@@ -5,7 +5,7 @@
         "phoneNumber": "1234567890",
         "gender": "Male",
         "specialization": "Cardiology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "101"
     },
     {
@@ -14,7 +14,7 @@
         "phoneNumber": "9876543210",
         "gender": "Female",
         "specialization": "Dermatology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "102"
     },
     {
@@ -23,7 +23,7 @@
         "phoneNumber": "4567890123",
         "gender": "Male",
         "specialization": "Orthopedics",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "103"
     },
     {
@@ -32,7 +32,7 @@
         "phoneNumber": "3210987654",
         "gender": "Female",
         "specialization": "Pediatrics",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "104"
     },
     {
@@ -41,7 +41,7 @@
         "phoneNumber": "7890123456",
         "gender": "Male",
         "specialization": "Ophthalmology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "105"
     },
     {
@@ -50,7 +50,7 @@
         "phoneNumber": "2345678901",
         "gender": "Female",
         "specialization": "Gynecology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "106"
     },
     {
@@ -59,7 +59,7 @@
         "phoneNumber": "9012345678",
         "gender": "Male",
         "specialization": "Neurology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "107"
     },
     {
@@ -68,7 +68,7 @@
         "phoneNumber": "5678901234",
         "gender": "Female",
         "specialization": "Psychiatry",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "108"
     },
     {
@@ -77,7 +77,7 @@
         "phoneNumber": "0123456789",
         "gender": "Male",
         "specialization": "Urology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "109"
     },
     {
@@ -86,7 +86,7 @@
         "phoneNumber": "8901234567",
         "gender": "Female",
         "specialization": "Endocrinology",
-        "img": "/assets/doctor-icon.svg",
+        "img": "assets/doctor-icon.svg",
         "roomNumber": "110"
     }
 ]

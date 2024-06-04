@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       signInWithEmailAndPassword(auth, loginEmail, loginPassword)
         .then(() => {
           console.log("Login success");
-          window.location.href = "appointment.html"; // Redirect to appointment page
+          window.location.href = "appointment.html";
         })
         .catch((err) => {
           const loginError = document.getElementById("loginError");

@@ -28,6 +28,7 @@
 
 }
 
+#doctors button {}
 
 #appointment-page-id {
     display: flex;
@@ -192,9 +193,7 @@
 
 /* Appointment details */
 #appointment-details {
-    h2 {
-        color: black;
-    }
+    color: black;
 }
 
 #cancel-appointment-btn,

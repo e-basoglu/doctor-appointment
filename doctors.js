@@ -194,8 +194,10 @@ function createTimeForm(chosenDate) {
     const doctorElement = timeForm.parentElement;
     const doctorName = doctorElement.querySelector("h2").textContent;
     const doctorImgSrc = doctorElement.querySelector("img").src;
-    const doctorSpecialization = doctorElement.querySelector("p:nth-of-type(1)").textContent;
-    const doctorRoom = doctorElement.querySelector("p:nth-of-type(2)").textContent;
+    const doctorSpecialization =
+      doctorElement.querySelector("p:nth-of-type(1)").textContent;
+    const doctorRoom =
+      doctorElement.querySelector("p:nth-of-type(2)").textContent;
 
     const appointment = {
       doctor: doctorName,
@@ -235,29 +237,14 @@ function createTimeForm(chosenDate) {
     timeForm.style.display = "none";
     appointmentDetailsSection.style.display = "block";
 
-    const cancelAppointmentBtn = document.getElementById("cancel-appointment-btn");
-    cancelAppointmentBtn.style.display = "block";
-    const backToDoctorsBtn = document.createElement("button");
-    backToDoctorsBtn.textContent = "Back to Doctors";
-    backToDoctorsBtn.classList.add("back-btn");
-    backToDoctorsBtn.addEventListener("click", () => {
-      appointmentDetailsSection.style.display = "none";
-      displayDoctors();
-      backToDoctorsBtn.style.display = "none";
-    });
-    selectedAppointmentDiv.after(backToDoctorsBtn);
+    const goToProfileLink = document.createElement("a");
+    goToProfileLink.textContent = "Go to Profile";
+    goToProfileLink.classList.add("back-btn");
+    goToProfileLink.href = "./profile.html";
+    selectedAppointmentDiv.after(goToProfileLink);
   });
 
   return timeForm;
 }
-
-
-const cancelButton = document.getElementById("cancel-appointment-btn");
-cancelButton.addEventListener("click", () => {
-  localStorage.removeItem("appointments");
-  appointmentDetailsSection.style.display = "none";
-  doctorsBlock.style.display = "block";
-  cancelButton.style.display = "none";
-});
 
 displayDoctors();
