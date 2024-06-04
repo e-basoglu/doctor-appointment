@@ -5,6 +5,12 @@
     font-family: "Montserrat", sans-serif;
 }
 
+header{
+    position: sticky;
+    top: 0;
+  }
+
+  
 /* Doctors section */
 #doctors {
     display: flex;

@@ -1,5 +1,18 @@
-*{
-  list-style: none;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
+
+/* Global styles */
+* {
+    font-family: "Montserrat", sans-serif;
+    list-style: none;
+}
+
+header{
+  position: sticky;
+  top: 0;
+}
+
+main{
+  height: 100vh;
 }
 
 #appointmentsContainer {
@@ -16,12 +29,11 @@
 
 #appointmentsContainer ul {
   height: 100%;
-
 }
 
 #appointmentsContainer ul li {
   display: grid;
-  grid-template-columns: 1fr 3fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
   margin-top: 2rem;
   align-items: center;
   white-space: nowrap;
@@ -38,14 +50,3 @@
   background-color: white;
 }
 
-/* #appointmentsContainer ul li h2,
-#appointmentsContainer ul li p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  padding: 1rem;
-  margin: 0 auto;
-  width: 100%;
-} */

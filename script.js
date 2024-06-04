@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileLink = document.getElementById("profile-link");
   const logoutLink = document.getElementById("logout-link");
   const appointmentLink = document.getElementById("appointment-link");
+  const appointmentButton = document.getElementById("appointment-button");
 
   if (logoutLink) {
     logoutLink.addEventListener("click", () => {
@@ -53,4 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (profileLink) profileLink.style.display = "none";
     }
   });
+
+  if (appointmentButton) {
+    appointmentButton.addEventListener("click", () => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          window.location.href = "appointment.html"; // Redirect to appointment page
+        } else {
+          window.location.href = "login.html"; // Redirect to login page
+        }
+      });
+    });
+  }
 });

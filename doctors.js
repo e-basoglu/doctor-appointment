@@ -23,20 +23,20 @@ async function fetchDoctors() {
 async function displayDoctors() {
   const data = await fetchDoctors();
   if (data) {
-    const doctorUl = document.createElement("ul"); // Create the ul element once
+    const doctorUl = document.createElement("ul"); 
 
     data.forEach((doctor) => {
-      const doctorItem = createDoctorItem(doctor); // Assuming createDoctorItem returns an li element
+      const doctorItem = createDoctorItem(doctor); 
       doctorUl.appendChild(doctorItem);
     });
 
-    doctorsBlock.appendChild(doctorUl); // Append the ul element to doctorsBlock
+    doctorsBlock.appendChild(doctorUl); 
 
     const appointmentButtons = document.querySelectorAll(".appointment-btn");
     appointmentButtons.forEach((button) => {
       button.addEventListener("click", (event) => {
-        const clickedDoctor = event.target.closest("li"); // Change this to li
-        const otherDoctorItems = Array.from(doctorUl.children).filter( // Change this to doctorUl.children
+        const clickedDoctor = event.target.closest("li"); 
+        const otherDoctorItems = Array.from(doctorUl.children).filter( 
           (item) => item !== clickedDoctor
         );
         otherDoctorItems.forEach((item) => (item.style.display = "none"));
@@ -45,7 +45,6 @@ async function displayDoctors() {
     });
   }
 }
-
 
 function createDoctorItem(doctor) {
   const doctorItem = document.createElement("li");
