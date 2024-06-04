@@ -10,6 +10,13 @@ header{
     top: 0;
   }
 
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
   
 /* Doctors section */
 #doctors {
