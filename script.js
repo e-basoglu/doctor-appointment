@@ -21,6 +21,7 @@ const auth = getAuth(app);
 document.addEventListener("DOMContentLoaded", () => {
   const loginLink = document.getElementById("login-link");
   const signupLink = document.getElementById("signup-link");
+  const profileLink = document.getElementById("profile-link");
   const logoutLink = document.getElementById("logout-link");
   const appointmentLink = document.getElementById("appointment-link");
 
@@ -41,13 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user) {
       if (loginLink) loginLink.style.display = "none";
       if (signupLink) signupLink.style.display = "none";
-      logoutLink.style.display = "inline";
-      appointmentLink.style.display = "inline";
+      if (logoutLink) logoutLink.style.display = "inline";
+      if (appointmentLink) appointmentLink.style.display = "inline";
+      if (profileLink) profileLink.style.display = "inline";
     } else {
       if (loginLink) loginLink.style.display = "inline";
       if (signupLink) signupLink.style.display = "inline";
       if (logoutLink) logoutLink.style.display = "none";
       if (appointmentLink) appointmentLink.style.display = "none";
+      if (profileLink) profileLink.style.display = "none";
     }
   });
 });

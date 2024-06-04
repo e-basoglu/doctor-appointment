@@ -4,6 +4,7 @@ html {
   font-size: 14px;
   line-height: 1.5;
 }
+
 *,
 *::before,
 *::after {
@@ -11,6 +12,7 @@ html {
   margin: 0;
   padding: 0;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -49,6 +51,7 @@ header {
   font-weight: 400;
   padding-left: 10px;
 }
+
 .clinic-name-welcome {
   font-size: 2.5rem;
   color: white;
@@ -64,10 +67,15 @@ header {
   display: flex;
   flex-direction: row;
 }
+.auth-links a{
+  margin: 0 10px;
+}
+
 .slash {
   margin: 0 10px;
   color: white;
 }
+
 #signup-link {
   color: white;
 }
@@ -117,7 +125,6 @@ h1 {
 .login-container {
   background-color: rgb(255, 255, 255, 0.8);
   padding: 40px 120px;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 500px;
   text-align: center;
@@ -179,13 +186,16 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
 .login-button {
   width: 100%;
 }
+
 .appointment_button {
   background-color: #fff;
   color: #2378ab;
 }
+
 .appointment_button:hover {
   background-color: #82c5ef;
 }
@@ -193,9 +203,11 @@ button {
 button:hover {
   background-color: #3ea7c0;
 }
+
 .small_txt {
   font-size: 0.8rem;
 }
+
 /*background*/
 .svg-background {
   width: 100%;
@@ -212,6 +224,7 @@ button:hover {
   position: relative;
   z-index: 1;
 }
+
 .svg-background::after {
   content: "";
   position: absolute;
@@ -237,13 +250,16 @@ footer {
   font-size: 0.8rem;
   margin-top: 5px;
 }
+
 /*wellcome page*/
 .txt_white {
   color: white;
 }
+
 .login_header {
   margin-right: 1rem;
 }
+
 @media (max-width: 480px) {
   .login-container {
     padding: 20px;
