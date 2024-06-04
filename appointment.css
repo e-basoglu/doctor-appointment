@@ -1,13 +1,14 @@
-body {}
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 #doctors {
     display: flex;
     flex-direction: column;
-
     width: 50%;
 }
 
-main {}
+* {
+    font-family: "Montserrat", sans-serif;
+}
 
 #doctors h2 {
     color: white;
@@ -27,7 +28,6 @@ main {}
 
 }
 
-#doctors button {}
 
 #appointment-page-id {
     display: flex;
@@ -53,7 +53,7 @@ main {}
 /* doctors before click */
 .doctors-before-click ul li {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 4fr 3fr 1fr 1fr;
     margin-top: 2rem;
     align-items: center;
     white-space: nowrap;
@@ -69,20 +69,29 @@ main {}
     font-size: 1.2rem;
     padding: 1rem;
 
-
 }
 
 
 
 
 .doctors-before-click button {
-    margin-left: 1rem;
     width: fit-content;
     color: white;
-    border: none;
-    font-size: 1rem;
-    background: transparent;
-    height: fit-content;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.doctors-before-click button:hover {
+    background-color: rgb(53, 53, 53);
+}
+
+.doctors-before-click ul form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .doctors-before-click ul form button {
@@ -96,9 +105,38 @@ main {}
 
 }
 
+.doctors-before-click ul form input[type="date"] {
+    padding: 2rem;
+    color: white;
+    font-size: 2rem;
+    background-color: transparent;
+    border: 3px solid white;
+    transition: 0.5s;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.doctors-before-click ul form input[type="date"]:focus {
+    outline: none;
+
+}
+
+.doctors-before-click ul form input[type="date"]:hover {
+    color: rgb(53, 53, 53);
+
+}
+
+
 .doctors-before-click ul form button:hover {
     background-color: rgb(53, 53, 53);
     color: white;
+}
+
+.doctors-before-click ul form label {
+    color: white;
+    font-size: 1.5rem;
+
 }
 
 
@@ -110,7 +148,7 @@ main {}
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
 }
 
 .doctors-on-click img {
@@ -196,6 +234,56 @@ main {}
     justify-content: center;
     padding: 2rem;
     gap: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+    border-radius: 10px;
     margin-bottom: 2rem;
+}
+
+#selected-appointment strong {
+    color: rgb(53, 53, 53);
+}
+
+#selected-appointment img {
+    width: 50%;
+    border-radius: 50%;
+
+}
+
+#selected-appointment p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.time-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+
+}
+
+.time-button.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.confirm-btn,
+.back-btn {
+    margin-top: 5px;
 }

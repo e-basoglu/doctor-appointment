@@ -109,6 +109,10 @@ function createDateForm() {
   dateInput.id = "appointment-date";
   dateInput.name = "appointment-date";
   dateInput.required = true;
+
+  // Set the minimum date to the current date
+  dateInput.min = new Date().toISOString().split('T')[0];
+
   const nextButton = document.createElement("button");
   nextButton.type = "button";
   nextButton.textContent = "Next";
@@ -132,41 +136,61 @@ function createDateForm() {
   return dateForm;
 }
 
+
 function createTimeForm(chosenDate) {
   const timeForm = document.createElement("form");
   const timeLabel = document.createElement("label");
   timeLabel.textContent = `Choose a time slot for ${chosenDate}:`;
   timeLabel.setAttribute("for", "appointment-time");
-  const timeSelect = document.createElement("select");
-  timeSelect.id = "appointment-time";
-  timeSelect.name = "appointment-time";
-  timeSelect.required = true;
+
   const timeOptions = [
     { value: "09:00", text: "09:00" },
+    { value: "09:30", text: "09:30" },
     { value: "10:00", text: "10:00" },
+    { value: "10:30", text: "10:30" },
     { value: "11:00", text: "11:00" },
     { value: "14:00", text: "14:00" },
+    { value: "14:30", text: "14:30" },
     { value: "15:00", text: "15:00" },
+    { value: "15:30", text: "15:30" },
     { value: "16:00", text: "16:00" },
+    { value: "16:30", text: "16:30" },
+    { value: "17:00", text: "17:00" }
   ];
+
+  const timeGrid = document.createElement("div");
+  timeGrid.classList.add("time-grid");
+
   timeOptions.forEach((option) => {
-    const timeOption = document.createElement("option");
-    timeOption.value = option.value;
-    timeOption.textContent = option.text;
-    timeSelect.appendChild(timeOption);
+    const timeButton = document.createElement("button");
+    timeButton.type = "button";
+    timeButton.value = option.value;
+    timeButton.textContent = option.text;
+    timeButton.classList.add("time-button");
+    timeGrid.appendChild(timeButton);
+    timeButton.addEventListener("click", () => {
+      document.querySelectorAll(".time-button").forEach(btn => btn.classList.remove("selected"));
+      timeButton.classList.add("selected");
+    });
   });
+
   const confirmButton = document.createElement("button");
   confirmButton.type = "submit";
   confirmButton.textContent = "Next";
   confirmButton.classList.add("confirm-btn");
 
   timeForm.appendChild(timeLabel);
-  timeForm.appendChild(timeSelect);
+  timeForm.appendChild(timeGrid);
   timeForm.appendChild(confirmButton);
 
   confirmButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const chosenTime = timeSelect.value;
+    const chosenTimeButton = timeGrid.querySelector(".selected");
+    if (!chosenTimeButton) {
+      alert("Please select a time slot.");
+      return;
+    }
+    const chosenTime = chosenTimeButton.value;
     const doctorElement = timeForm.parentElement;
     const doctorName = doctorElement.querySelector("h2").textContent;
     const doctorImgSrc = doctorElement.querySelector("img").src;
@@ -223,8 +247,10 @@ function createTimeForm(chosenDate) {
     });
     selectedAppointmentDiv.after(backToDoctorsBtn);
   });
+
   return timeForm;
 }
+
 
 const cancelButton = document.getElementById("cancel-appointment-btn");
 cancelButton.addEventListener("click", () => {
