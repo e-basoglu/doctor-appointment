@@ -1,59 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Appointment App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="appointment.css" />
+    <script type="module" src="doctors.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doctor Appointment App</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="appointment.css" />
-  <script type="module" src="doctors.js" defer></script>
+  <body id="appointment-page-id">
+    <header>
+      <a href="./index.html" class="logo">
+        <img src="assets/logo.png" alt="Logo" />
+        <span class="clinic-name">Swiss Care Clinic</span>
+      </a>
+      <div class="auth-links">
+        <a href="./appointment.html" id="appointment-link">Appointments</a>
+        <a href="./login.html" id="login-link" class="txt_white">Log In</a>
+        <p class="slash">/</p>
+        <a href="./signup.html" id="signup-link" class="txt_white">Sign Up</a>
+        <a href="#" id="logout-link" style="display: none">Log Out</a>
+      </div>
+    </header>
+    <main>
+      <div class="main-function">
+        <div id="doctors" class="doctors-before-click"></div>
 
-</head>
+        <section id="appointment-details" style="display: none">
+          <h2>You created an appointment</h2>
+          <div id="selected-appointment"></div>
+          <button id="cancel-appointment-btn">Cancel Appointment</button>
+        </section>
 
-<body id="appointment-page-id">
-  <header>
-    <a href="./index.html" class="logo">
-      <img src="assets/logo.png" alt="Logo" />
-      <span class="clinic-name">Swiss Care Clinic</span>
-    </a>
-    <div class="auth-links">
-      <a href="./appointment.html" id="appointment-link">Appointments</a>
-      <a href="./login.html" id="login-link" class="txt_white">Log In</a>
-      <p class="slash">/</p>
-      <a href="./signup.html" id="signup-link" class="txt_white">Sign Up</a>
-      <a href="#" id="logout-link" style="display: none">Log Out</a>
-    </div>
-  </header>
-  <main>
-    <!--     <div class="svg-background">
-        <div class="welcome_logo">
-          <a href=""><img src="assets/logo.png" alt="Logo" /></a>
-          <span class="clinic-name-welcome">Swiss Care Clinic</span>
-          <button class="appointment_button" type="button" id="appointment">
-            Make and appointment
-          </button>
-        </div>
-      </div> -->
-    <div class="main-function">
-      <div style="color: white">Appointment Page</div>
-
-      <div id="doctors" class="doctors-before-click"></div>
-
-      <section id="appointment-details" style="display: none">
-        <h2>You created an appointment</h2>
-        <div id="selected-appointment"></div>
-        <button id="cancel-appointment-btn">Cancel Appointment</button>
-      </section>
-
-      <div id="appointments-container"></div>
-    </div>
-
-  </main>
-  <footer>
-    <p class="small_txt">&copy Powercoders</p>
-  </footer>
-  <script type="module" src="script.js"></script>
-</body>
-
+        <div id="appointments-container"></div>
+      </div>
+    </main>
+    <footer>
+      <p class="small_txt">&copy Powercoders</p>
+    </footer>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
