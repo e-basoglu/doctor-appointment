@@ -157,7 +157,7 @@ function createTimeForm(chosenDate) {
   });
   const confirmButton = document.createElement("button");
   confirmButton.type = "submit";
-  confirmButton.textContent = "Confirm";
+  confirmButton.textContent = "Next";
   confirmButton.classList.add("confirm-btn");
 
   timeForm.appendChild(timeLabel);
@@ -167,7 +167,11 @@ function createTimeForm(chosenDate) {
   confirmButton.addEventListener("click", (e) => {
     e.preventDefault();
     const chosenTime = timeSelect.value;
-    const doctorName = timeForm.parentElement.querySelector("h2").textContent;
+    const doctorElement = timeForm.parentElement;
+    const doctorName = doctorElement.querySelector("h2").textContent;
+    const doctorImgSrc = doctorElement.querySelector("img").src;
+    const doctorSpecialization = doctorElement.querySelector("p:nth-of-type(1)").textContent;
+    const doctorRoom = doctorElement.querySelector("p:nth-of-type(2)").textContent;
 
     const appointment = {
       doctor: doctorName,
@@ -178,22 +182,36 @@ function createTimeForm(chosenDate) {
     localStorage.setItem("appointments", JSON.stringify(appointments));
 
     selectedAppointmentDiv.innerHTML = "";
+
+    const doctorImg = document.createElement("img");
+    doctorImg.src = doctorImgSrc;
+    doctorImg.alt = doctorName;
+    selectedAppointmentDiv.appendChild(doctorImg);
+
     const doctorPara = document.createElement("p");
     doctorPara.innerHTML = `<strong>Doctor:</strong> ${appointment.doctor}`;
+    selectedAppointmentDiv.appendChild(doctorPara);
+
     const datePara = document.createElement("p");
     datePara.innerHTML = `<strong>Date:</strong> ${appointment.date}`;
+    selectedAppointmentDiv.appendChild(datePara);
+
     const timePara = document.createElement("p");
     timePara.innerHTML = `<strong>Time:</strong> ${appointment.time}`;
-    selectedAppointmentDiv.appendChild(doctorPara);
-    selectedAppointmentDiv.appendChild(datePara);
     selectedAppointmentDiv.appendChild(timePara);
+
+    const specializationPara = document.createElement("p");
+    specializationPara.innerHTML = `<strong>Specialization:</strong> ${doctorSpecialization}`;
+    selectedAppointmentDiv.appendChild(specializationPara);
+
+    const roomPara = document.createElement("p");
+    roomPara.innerHTML = `<strong>Room Number:</strong> ${doctorRoom}`;
+    selectedAppointmentDiv.appendChild(roomPara);
 
     timeForm.style.display = "none";
     appointmentDetailsSection.style.display = "block";
 
-    const cancelAppointmentBtn = document.getElementById(
-      "cancel-appointment-btn"
-    );
+    const cancelAppointmentBtn = document.getElementById("cancel-appointment-btn");
     cancelAppointmentBtn.style.display = "block";
     const backToDoctorsBtn = document.createElement("button");
     backToDoctorsBtn.textContent = "Back to Doctors";
@@ -203,9 +221,8 @@ function createTimeForm(chosenDate) {
       displayDoctors();
       backToDoctorsBtn.style.display = "none";
     });
-    selectedAppointmentDiv.appendChild(backToDoctorsBtn);
+    selectedAppointmentDiv.after(backToDoctorsBtn);
   });
-
   return timeForm;
 }
 

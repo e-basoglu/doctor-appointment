@@ -1,44 +1,201 @@
+body {}
+
 #doctors {
     display: flex;
     flex-direction: column;
-    background-color: rgb(219, 219, 219);
+
     width: 50%;
 }
 
-.doctors-before-click ul li {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    white-space: nowrap;
+main {}
 
-}
+#doctors h2 {
+    color: white;
+    margin: 0;
 
-.doctors-on-click ul li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #doctors ul li img {
     border-radius: 50%;
     margin-right: 1rem;
     background-color: white;
+
 }
 
 #doctors ul {
     height: 100%;
+
 }
 
-#doctors h2 {
-    color: red;
+#doctors button {}
+
+#appointment-page-id {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.main-function {
+    margin-top: 3%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* doctors before click */
+.doctors-before-click ul li {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    margin-top: 2rem;
+    align-items: center;
+    white-space: nowrap;
+    gap: 1rem;
+}
+
+.doctors-before-click ul li h2,
+.doctors-before-click ul li p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     font-size: 1.2rem;
+    padding: 1rem;
+
+
 }
 
-#doctors button {
+
+
+
+.doctors-before-click button {
     margin-left: 1rem;
     width: fit-content;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
     font-size: 1rem;
+    background: transparent;
+    height: fit-content;
+}
+
+.doctors-before-click ul form button {
+    margin-left: 1rem;
+    width: fit-content;
+    color: white;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+
+}
+
+.doctors-before-click ul form button:hover {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
+
+/* doctors on click */
+.doctors-on-click ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.doctors-on-click img {
+    width: 30%;
+    height: 30%;
+    margin-bottom: 2rem;
+}
+
+.doctors-on-click ul li h2 {
+    font-size: 2.5rem;
+    color: white;
+    padding: 0;
+
+}
+
+.doctors-on-click ul li p {
+    font-size: 1.5rem;
+}
+
+.doctors-on-click button {
+    /*     display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: fit-content;
+    color: white;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+
+}
+
+.doctors-on-click form button {
+    color: red;
+}
+
+
+.confirm-doctor-btn:hover {
+    background-color: rgb(53, 53, 53);
+}
+
+/* Appointment details */
+#appointment-details {
+    h2 {
+        color: black;
+    }
+}
+
+#cancel-appointment-btn,
+.back-btn {
+    color: white;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#cancel-appointment-btn:hover,
+.back-btn:hover {
+
+    color: whitesmoke;
+}
+
+
+
+#appointment-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#appointment-details button:hover {
+    background-color: rgb(53, 53, 53);
+}
+
+#selected-appointment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
