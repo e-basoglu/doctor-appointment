@@ -57,6 +57,20 @@ h1, h2, p{
   background-color: white;
 }
 
+.delete-btn {
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #196fa5; 
+  cursor: pointer; 
+}
+
+.delete-btn:hover {
+  background-color: red; 
+}
+
 /* Media Queries for Responsiveness */
 
 @media (max-width: 768px) {
