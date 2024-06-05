@@ -48,7 +48,7 @@ h1, h2, p{
   padding: 15px 30px;
   box-shadow: 0 0 2rem rgba(214, 214, 214, 0.1);
   border-radius: 20px;
-
+  background-color: #5a90b4;
 }
 
 #appointmentsContainer ul li img {

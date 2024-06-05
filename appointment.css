@@ -156,6 +156,9 @@ p{
     align-items: center;
     white-space: nowrap;
     gap: 1rem;
+    background-color: #5a90b4;
+    padding: 1rem;
+    border-radius: 20px;
 }
 
 .doctors-before-click ul li form .time-button {
