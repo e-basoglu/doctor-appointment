@@ -126,8 +126,13 @@ function createDateForm() {
 
   nextButton.addEventListener("click", () => {
     const chosenDate = dateInput.value;
+    const today = new Date().toISOString().split('T')[0];
     if (!chosenDate) {
       alert("Please choose a date");
+      return;
+    }
+    if (chosenDate < today) {
+      alert("Please choose a valid date");
       return;
     }
     dateForm.style.display = "none";
