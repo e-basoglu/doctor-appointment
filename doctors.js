@@ -1,8 +1,10 @@
 const doctorsBlock = document.querySelector("#doctors");
 const title = document.createElement("h1");
 const filterBlock = document.querySelector(".filter-block");
+const myUl = document.querySelector("ul");
 title.textContent = "Our Doctors";
 title.classList.add("doctors-title");
+
 doctorsBlock.appendChild(title);
 
 let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
@@ -116,8 +118,27 @@ function createDateForm() {
   dateInput.name = "appointment-date";
   dateInput.required = true;
 
-  // Set the minimum date to the current date
-  dateInput.min = new Date().toISOString().split('T')[0];
+
+  const today = new Date();
+  const maxDate = new Date(today.getFullYear(), today.getMonth() + 6, today.getDate());
+  dateInput.min = today.toISOString().split('T')[0];
+  dateInput.max = maxDate.toISOString().split('T')[0];
+  dateInput.addEventListener("input", () => {
+    const chosenDate = new Date(dateInput.value);
+    const chosenDay = chosenDate.getDay();
+    if (chosenDay === 0) {
+      alert("Please choose a date that is not a Sunday.");
+      dateInput.value = "";
+    } else if (chosenDate < today) {
+      alert("Please choose a date that is not in the past.");
+      dateInput.value = "";
+    } else if (chosenDate > maxDate) {
+      alert("Please choose a date within the next 6 months.");
+      dateInput.value = "";
+    }
+  });
+
+
 
   const nextButton = document.createElement("button");
   nextButton.type = "button";
@@ -201,6 +222,9 @@ function createTimeForm(chosenDate) {
       alert("Please select a time slot.");
       return;
     }
+    doctorsBlock.style.display = "none";
+
+
     const chosenTime = chosenTimeButton.value;
     const doctorElement = timeForm.parentElement;
     const doctorName = doctorElement.querySelector("h2").textContent;
