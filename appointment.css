@@ -23,6 +23,7 @@ p {
     display: flex;
     flex-direction: column;
     font-weight: 700;
+
 }
 
 #doctors h2 {
@@ -65,10 +66,8 @@ p {
 #doctors button {
     width: fit-content;
     color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
-    padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #doctors button:hover {
@@ -83,13 +82,12 @@ p {
 }
 
 #doctors ul form button {
-    margin-left: 1rem;
+
     width: fit-content;
     color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
     padding: 0.5rem;
-    border-radius: 10px;
+
 }
 
 #doctors ul form .time-button {
@@ -187,7 +185,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+
     font-size: 1.2rem;
     padding: 1rem;
 }
@@ -195,10 +193,8 @@ p {
 .doctors-before-click button {
     width: fit-content;
     color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
-    padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .doctors-before-click button:hover {
@@ -213,13 +209,11 @@ p {
 }
 
 .doctors-before-click ul form button {
-    margin-left: 1rem;
     width: fit-content;
     color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
     padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .doctors-before-click ul form input[type="date"] {
@@ -265,7 +259,7 @@ p {
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    border: 3px solid white;
+    border: 0.5px solid #72b6e4;
 }
 
 .doctors-on-click img {
@@ -290,15 +284,16 @@ p {
 .doctors-on-click button {
     width: fit-content;
     color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
     padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #72b6e4;
 }
 
-.doctors-on-click form button {
-    color: red;
+.doctors-on-click button:hover {
+    background-color: #72b6e4;
 }
+
 
 .confirm-doctor-btn:hover {
     background-color: rgb(53, 53, 53);
@@ -307,7 +302,7 @@ p {
 /* Appointment details */
 #appointment-details {
     color: black;
-    width: 70%;
+    width: 50%;
 }
 
 #appointment-details h2 {
@@ -348,9 +343,10 @@ p {
     justify-content: center;
     padding: 2rem;
     gap: 1rem;
-    border: 3px solid white;
+    background-color: #5a90b4;
     border-radius: 10px;
     margin-bottom: 2rem;
+    width: 60%;
 }
 
 #selected-appointment strong {
@@ -358,8 +354,8 @@ p {
 }
 
 #selected-appointment img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     object-position: top;
     border-radius: 50%;
@@ -374,26 +370,23 @@ p {
 .time-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1rem;
+    gap: 0.1rem;
     justify-items: center;
     align-items: center;
     width: 100%;
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid white;
-    border-radius: 10px;
+
 }
 
 .time-button {
     padding: 10px;
-    border: 1px solid #ccc;
     cursor: pointer;
     text-align: center;
     width: 100%;
 }
 
 .time-button.selected {
-    background-color: #007bff;
+    background-color: #69d18a;
     color: white;
 }
 
@@ -402,25 +395,41 @@ p {
     margin-top: 5px;
 }
 
+#appointment-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
 #appointment-details a {
-    margin-bottom: 1rem;
     font-size: 1.5rem;
     display: block;
-    transition: 0.3s;
-    width: 100%;
+    width: fit-content;
     padding: 10px;
-    background-color: #2378ab;
+    background-color: #72b6e4;
     color: #fff;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 #appointment-details a:hover {
     background-color: rgb(53, 53, 53);
 }
+
+#appointment-details img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+
+}
+
+
 
 /* Media Queries */
 
@@ -435,6 +444,15 @@ p {
         margin-bottom: 1rem;
         border-radius: 10px;
 
+    }
+
+
+    #appointment-details {
+        width: 100%;
+    }
+
+    #selected-appointment {
+        width: 100%;
     }
 
     #selected-appointment img {
@@ -486,9 +504,48 @@ p {
     .doctors-before-click ul li form label {
         width: 100%;
     }
+
+    #appointment-details {
+        width: 70%;
+    }
+
+    #selected-appointment {
+        width: 100%;
+    }
+
+
+    #selected-appointment img {
+        width: 170px;
+        height: 170px;
+    }
 }
 
 /* For larger screens */
 @media only screen and (min-width: 1025px) {
     /* Update styles for larger screens here */
+}
+
+
+
+
+/* filters */
+.filter-block {}
+
+.filter-block h2 {
+    color: white;
+}
+
+.filter-block select {
+    padding: 0.5rem;
+    color: white;
+    background-color: #5a90b4;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.filter-block select:hover {
+    background-color: #72b6e4;
+
 }

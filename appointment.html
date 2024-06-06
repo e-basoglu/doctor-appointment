@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctor Appointment App</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="appointment.css" />
-    <script src="doctors.js" defer></script>
-  </head>
 
-  <body id="appointment-page-id">
-    <header>
-      <a href="./index.html" class="logo">
-        <img src="assets/logo.png" alt="Logo" />
-        <span class="clinic-name">Swiss Care Clinic</span>
-      </a>
-      <div class="auth-links">
-        <a href="./profile.html" id="profile-link" class="txt_white">Profile</a>
-        <p class="slash">|</p>
-        <a href="./appointment.html" id="appointment-link">Appointments</a>
-        <p class="slash">|</p>
-        <a href="./login.html" id="login-link" class="txt_white">Log In</a>
-        <a href="./signup.html" id="signup-link" class="txt_white">Sign Up</a>
-        <a href="#" id="logout-link" style="display: none">Log Out</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Appointment App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="appointment.css" />
+  <script src="doctors.js" defer></script>
+</head>
+
+<body id="appointment-page-id">
+  <header>
+    <a href="./index.html" class="logo">
+      <img src="assets/logo.png" alt="Logo" />
+      <span class="clinic-name">Swiss Care Clinic</span>
+    </a>
+    <div class="auth-links">
+      <a href="./profile.html" id="profile-link" class="txt_white">Profile</a>
+      <p class="slash">|</p>
+      <a href="./appointment.html" id="appointment-link">Appointments</a>
+      <p class="slash">|</p>
+      <a href="./login.html" id="login-link" class="txt_white">Log In</a>
+      <a href="./signup.html" id="signup-link" class="txt_white">Sign Up</a>
+      <a href="#" id="logout-link" style="display: none">Log Out</a>
+    </div>
+  </header>
+  <main>
+    <div class="filter-block">
+      <h2>Search by speciality</h2>
+      <div class="filter">
+        <select id="specialization-select">
+          <option value="all">All</option>
+        </select>
       </div>
-    </header>
-    <main>
-      <div class="main-function">
-        <div id="doctors" class="doctors-before-click"></div>
+    </div>
 
-        <section id="appointment-details" style="display: none">
-          <h2>You created an appointment</h2>
-          <div id="selected-appointment"></div>
-        </section>
+    <div class="main-function">
+      <div id="doctors" class="doctors-before-click"></div>
 
-        <div id="appointments-container"></div>
-      </div>
-    </main>
-    <footer>
-      <p class="small_txt">&copy Powercoders</p>
-    </footer>
-    <script type="module" src="script.js"></script>
-  </body>
+      <section id="appointment-details" style="display: none">
+        <h2>You created an appointment</h2>
+        <div id="selected-appointment"></div>
+      </section>
+
+      <div id="appointments-container"></div>
+    </div>
+  </main>
+  <footer>
+    <p class="small_txt">&copy Powercoders</p>
+  </footer>
+  <script type="module" src="script.js"></script>
+</body>
+
 </html>

@@ -1,6 +1,8 @@
 const doctorsBlock = document.querySelector("#doctors");
 const title = document.createElement("h1");
+const filterBlock = document.querySelector(".filter-block");
 title.textContent = "Our Doctors";
+title.classList.add("doctors-title");
 doctorsBlock.appendChild(title);
 
 let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
@@ -71,6 +73,8 @@ function createDoctorItem(doctor) {
   appointmentBtn.classList.add("appointment-btn");
   appointmentBtn.addEventListener("click", () => {
     doctorsBlock.className = "doctors-on-click";
+    filterBlock.style.display = "none";
+    title.style.display = "none";
   });
 
   doctorItem.appendChild(appointmentBtn);
@@ -245,7 +249,7 @@ function createTimeForm(chosenDate) {
     selectedAppointmentDiv.appendChild(roomPara);
 
     timeForm.style.display = "none";
-    appointmentDetailsSection.style.display = "block";
+    appointmentDetailsSection.style.display = "flex";
 
     const goToProfileLink = document.createElement("a");
     goToProfileLink.textContent = "Go to Profile";
@@ -257,11 +261,63 @@ function createTimeForm(chosenDate) {
   return timeForm;
 }
 
+
+/*filter function*/
+function filterDoctors() {
+  const specializationSelect = document.getElementById("specialization-select");
+
+  specializationSelect.addEventListener("change", () => {
+    const selectedSpecialization = specializationSelect.value;
+    const doctorItems = document.querySelectorAll("#doctors ul li");
+
+    doctorItems.forEach((doctorItem) => {
+      const doctorSpecialization = doctorItem.querySelector("p:nth-of-type(1)").textContent;
+
+      if (selectedSpecialization === "all" || doctorSpecialization === selectedSpecialization) {
+        doctorItem.style.display = "grid";
+      } else {
+        doctorItem.style.display = "none";
+      }
+    });
+  });
+}
+
+async function fetchSpecializations() {
+  try {
+    const response = await fetch("doctors.json");
+    const data = await response.json();
+    const specializations = data.map((doctor) => doctor.specialization);
+    return specializations;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+async function displaySpecializations() {
+  const specializations = await fetchSpecializations();
+  if (specializations) {
+    const specializationSelect = document.getElementById("specialization-select");
+    specializations.forEach((specialization) => {
+      const option = document.createElement("option");
+      option.value = specialization;
+      option.textContent = specialization;
+      specializationSelect.appendChild(option);
+    });
+  }
+}
+
+/*calling functions*/
+filterDoctors();
+displaySpecializations();
+
+filterDoctors();
+
+
+
+
+
+
+
+/*calling function*/
+
 displayDoctors();
-
-
-
-
-
-
-/* Appointment cards image  */
