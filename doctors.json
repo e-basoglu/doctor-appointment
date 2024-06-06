@@ -18,6 +18,15 @@
         "roomNumber": "102"
     },
     {
+        "fullName": "Marry Jane",
+        "email": "janesmith@example.com",
+        "phoneNumber": "9876543210",
+        "gender": "Female",
+        "specialization": "Dermatology",
+        "img": "https://images.pexels.com/photos/5407243/pexels-photo-5407243.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "roomNumber": "107"
+    },
+    {
         "fullName": "Mei Chen",
         "email": "michaeljohnson@example.com",
         "phoneNumber": "4567890123",
@@ -33,7 +42,7 @@
         "gender": "Female",
         "specialization": "Pediatrics",
         "img": "https://images.pexels.com/photos/5998467/pexels-photo-5998467.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "roomNumber": "104"
+        "roomNumber": "111"
     },
     {
         "fullName": "Emily Wilson",
@@ -43,6 +52,15 @@
         "specialization": "Ophthalmology",
         "img": "https://images.pexels.com/photos/5722166/pexels-photo-5722166.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "105"
+    },
+    {
+        "fullName": "Mark Greyson",
+        "email": "davidwilson@example.com",
+        "phoneNumber": "7890123456",
+        "gender": "Male",
+        "specialization": "Pediatrics",
+        "img": "https://images.pexels.com/photos/4989179/pexels-photo-4989179.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "roomNumber": "120"
     },
     {
         "fullName": "John Smith",
