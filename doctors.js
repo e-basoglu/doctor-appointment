@@ -23,20 +23,20 @@ async function fetchDoctors() {
 async function displayDoctors() {
   const data = await fetchDoctors();
   if (data) {
-    const doctorUl = document.createElement("ul"); 
+    const doctorUl = document.createElement("ul");
 
     data.forEach((doctor) => {
-      const doctorItem = createDoctorItem(doctor); 
+      const doctorItem = createDoctorItem(doctor);
       doctorUl.appendChild(doctorItem);
     });
 
-    doctorsBlock.appendChild(doctorUl); 
+    doctorsBlock.appendChild(doctorUl);
 
     const appointmentButtons = document.querySelectorAll(".appointment-btn");
     appointmentButtons.forEach((button) => {
       button.addEventListener("click", (event) => {
-        const clickedDoctor = event.target.closest("li"); 
-        const otherDoctorItems = Array.from(doctorUl.children).filter( 
+        const clickedDoctor = event.target.closest("li");
+        const otherDoctorItems = Array.from(doctorUl.children).filter(
           (item) => item !== clickedDoctor
         );
         otherDoctorItems.forEach((item) => (item.style.display = "none"));
@@ -210,6 +210,9 @@ function createTimeForm(chosenDate) {
       doctor: doctorName,
       date: chosenDate,
       time: chosenTime,
+      specialization: doctorSpecialization,
+      room: doctorRoom,
+      img: doctorImgSrc
     };
     appointments.push(appointment);
     localStorage.setItem("appointments", JSON.stringify(appointments));
@@ -255,3 +258,10 @@ function createTimeForm(chosenDate) {
 }
 
 displayDoctors();
+
+
+
+
+
+
+/* Appointment cards image  */

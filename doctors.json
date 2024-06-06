@@ -1,11 +1,11 @@
 [
     {
-        "fullName": "John Doe",
+        "fullName": "Lius Willson",
         "email": "johndoe@example.com",
         "phoneNumber": "1234567890",
         "gender": "Male",
         "specialization": "Cardiology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/14438788/pexels-photo-14438788.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "101"
     },
     {
@@ -14,43 +14,43 @@
         "phoneNumber": "9876543210",
         "gender": "Female",
         "specialization": "Dermatology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/14438787/pexels-photo-14438787.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "102"
     },
     {
-        "fullName": "Michael Johnson",
+        "fullName": "Mei Chen",
         "email": "michaeljohnson@example.com",
         "phoneNumber": "4567890123",
         "gender": "Male",
         "specialization": "Orthopedics",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/4270366/pexels-photo-4270366.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "103"
     },
     {
-        "fullName": "Emily Brown",
+        "fullName": "Claire Brown",
         "email": "emilybrown@example.com",
         "phoneNumber": "3210987654",
         "gender": "Female",
         "specialization": "Pediatrics",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/5998467/pexels-photo-5998467.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "104"
     },
     {
-        "fullName": "David Wilson",
+        "fullName": "Emily Wilson",
         "email": "davidwilson@example.com",
         "phoneNumber": "7890123456",
         "gender": "Male",
         "specialization": "Ophthalmology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/5722166/pexels-photo-5722166.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "105"
     },
     {
-        "fullName": "Sarah Taylor",
+        "fullName": "John Smith",
         "email": "sarahtaylor@example.com",
         "phoneNumber": "2345678901",
         "gender": "Female",
         "specialization": "Gynecology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/12660379/pexels-photo-12660379.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "106"
     },
     {
@@ -59,7 +59,7 @@
         "phoneNumber": "9012345678",
         "gender": "Male",
         "specialization": "Neurology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/8376338/pexels-photo-8376338.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "107"
     },
     {
@@ -68,25 +68,25 @@
         "phoneNumber": "5678901234",
         "gender": "Female",
         "specialization": "Psychiatry",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/7904463/pexels-photo-7904463.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "108"
     },
     {
-        "fullName": "Daniel Robinson",
+        "fullName": "Danielle Robinson",
         "email": "danielrobinson@example.com",
         "phoneNumber": "0123456789",
         "gender": "Male",
         "specialization": "Urology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/5207104/pexels-photo-5207104.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "109"
     },
     {
-        "fullName": "Sophia Harris",
+        "fullName": "Li Johnson",
         "email": "sophiaharris@example.com",
         "phoneNumber": "8901234567",
         "gender": "Female",
         "specialization": "Endocrinology",
-        "img": "assets/doctor-icon.svg",
+        "img": "https://images.pexels.com/photos/5722163/pexels-photo-5722163.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "roomNumber": "110"
     }
 ]

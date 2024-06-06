@@ -2,21 +2,23 @@
 
 /* Global styles */
 * {
-    font-family: "Montserrat", sans-serif;
-    list-style: none;
-    box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-header{
+header {
   position: sticky;
   top: 0;
 }
 
-main{
+main {
   height: 100vh;
 }
 
-h1, h2, p{
+h1,
+h2,
+p {
   color: white;
 }
 
@@ -26,7 +28,7 @@ h1, h2, p{
   width: 70%;
   font-weight: 700;
   overflow-y: auto;
-  max-height: 70vh; 
+  max-height: 70vh;
 }
 
 #appointmentsContainer h2 {
@@ -52,9 +54,14 @@ h1, h2, p{
 }
 
 #appointmentsContainer ul li img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 50%;
   margin-right: 1rem;
   background-color: white;
+
 }
 
 .delete-btn {
@@ -63,48 +70,48 @@ h1, h2, p{
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 10px;
-  background-color: #196fa5; 
-  cursor: pointer; 
+  background-color: #196fa5;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
-  background-color: red; 
+  background-color: red;
 }
 
 /* Media Queries for Responsiveness */
 
 @media (max-width: 768px) {
   #appointmentsContainer ul li {
-      display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
   }
 
   #appointmentsContainer ul li img {
-      margin: 0 auto 1rem auto; 
+    margin: 0 auto 1rem auto;
   }
 
   #appointmentsContainer ul li h2,
   #appointmentsContainer ul li p,
   #appointmentsContainer ul li button {
-      margin: 10px 0; 
+    margin: 10px 0;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   #appointmentsContainer ul li {
     display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-}
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
 
-#appointmentsContainer ul li img {
-    margin: 0 auto 1rem auto; 
-}
+  #appointmentsContainer ul li img {
+    margin: 0 auto 1rem auto;
+  }
 }
