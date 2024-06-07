@@ -286,7 +286,6 @@ function createTimeForm(chosenDate) {
 }
 
 
-/*filter function*/
 function filterDoctors() {
   const specializationSelect = document.getElementById("specialization-select");
 
@@ -298,7 +297,7 @@ function filterDoctors() {
       const doctorSpecialization = doctorItem.querySelector("p:nth-of-type(1)").textContent;
 
       if (selectedSpecialization === "all" || doctorSpecialization === selectedSpecialization) {
-        doctorItem.style.display = "flex";
+        doctorItem.style.display = "";
       } else {
         doctorItem.style.display = "none";
       }
@@ -335,12 +334,6 @@ filterDoctors();
 displaySpecializations();
 
 filterDoctors();
-
-
-
-
-
-
 
 /*calling function*/
 

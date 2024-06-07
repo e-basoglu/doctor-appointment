@@ -115,3 +115,7 @@ p {
     margin: 0 auto 1rem auto;
   }
 }
+
+.for-filter-flex {
+  display: flex;
+}
