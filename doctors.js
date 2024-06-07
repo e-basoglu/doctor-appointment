@@ -298,7 +298,7 @@ function filterDoctors() {
       const doctorSpecialization = doctorItem.querySelector("p:nth-of-type(1)").textContent;
 
       if (selectedSpecialization === "all" || doctorSpecialization === selectedSpecialization) {
-        doctorItem.style.display = "grid";
+        doctorItem.style.display = "flex";
       } else {
         doctorItem.style.display = "none";
       }
